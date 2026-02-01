@@ -1,0 +1,327 @@
+body {
+  padding-top: 70px;
+  font-family: Arial, sans-serif;
+}
+
+.hero-section {
+  background: linear-gradient(to right, #0d6efd, #0a58ca);
+  padding: 100px 0;
+}
+
+.section-padding {
+  padding: 70px 0;
+}
+
+.section-title {
+  font-weight: 700;
+}
+
+.service-box,
+.destination-box {
+  background: white;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+}
+.hero-carousel {
+  position: relative;
+}
+
+.hero-img {
+  height: 90vh;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  bottom: 30%;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.carousel-caption h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-img {
+    height: 70vh;
+  }
+
+  .carousel-caption h1 {
+    font-size: 1.6rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+}
+
+/* ================= LOGO / NAVBAR STYLES ================= */
+.navbar-brand img {
+  width: 40px; /* base size - tweak as needed */
+  height: 40px;
+  object-fit: contain;
+  border-radius: 6px; /* slight rounding for friendly look */
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+.navbar-brand.d-flex {
+  gap: 0.5rem; /* keep image and text nicely spaced */
+  align-items: center;
+}
+
+/* On very small screens, hide the text to save space */
+@media (max-width: 420px) {
+  .navbar-brand span { display: none; }
+  .navbar-brand img { width: 36px; height: 36px; }
+}
+
+/* ================= ABOUT PAGE STYLES ================= */
+.about-page main {
+  padding-top: 2.5rem; /* additional breathing room under fixed navbar */
+}
+
+.about-page .section-title {
+  font-size: 2rem;
+  letter-spacing: 0.2px;
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.75;
+  color: #222;
+}
+
+.about-section {
+  margin-bottom: 2rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(12, 40, 80, 0.06);
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-section h3 {
+  font-size: 1rem;
+  color: #0d6efd; /* bootstrap primary */
+  margin-bottom: 0.5rem;
+}
+
+.about-section h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-section p {
+  margin-bottom: 0.75rem;
+}
+
+.about-section ul {
+  margin: 0.5rem 0 0.5rem 1.25rem;
+}
+
+.about-section ul li {
+  margin-bottom: 0.4rem;
+}
+
+/* Values list styled as badges */
+.about-values li {
+  display: inline-block;
+  background: rgba(13,110,253,0.08);
+  color: #084298;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  list-style: none;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .about-content { padding: 0 1rem; }
+  .about-section { padding: 0.75rem 0.9rem; }
+}
+
+/* ================= DESTINATIONS / GALLERY STYLES ================= */
+.destinations-grid { --card-gap: 1rem; }
+.destination-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  box-shadow: 0 6px 18px rgba(12,40,80,0.06);
+  will-change: transform;
+  animation: fadeInUp 480ms ease both;
+}
+
+.destination-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(12,40,80,0.12);
+}
+
+.destination-img {
+  display: block;
+  width: 100%;
+  height: 140px; /* smaller image height for compact cards */
+  object-fit: cover;
+  transition: transform 360ms ease;
+}
+
+.destination-card:hover .destination-img {
+  transform: scale(1.05);
+}
+
+/* Info sits below the image now for clarity */
+.destination-info {
+  position: relative;
+  padding: 0.9rem 1rem;
+  color: #222;
+  background: #fff;
+}
+
+.destination-info h5 {
+  margin: 0 0 0.4rem 0;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.destination-info ul {
+  margin: 0;
+  padding-left: 1.05rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.destination-info ul li { margin-bottom: 0.35rem; }
+
+/* staggered animation delays tied to column children */
+.destinations-grid > div:nth-child(1) .destination-card { animation-delay: 0ms; }
+.destinations-grid > div:nth-child(2) .destination-card { animation-delay: 60ms; }
+.destinations-grid > div:nth-child(3) .destination-card { animation-delay: 120ms; }
+.destinations-grid > div:nth-child(4) .destination-card { animation-delay: 180ms; }
+.destinations-grid > div:nth-child(5) .destination-card { animation-delay: 240ms; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px) scale(0.995); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 768px) {
+  .destination-img { height: 130px; }
+}
+
+@media (max-width: 576px) {
+  .destination-img { height: 110px; }
+  .destination-info h5 { font-size: 0.95rem; }
+  .destination-info ul { font-size: 0.9rem; }
+}
+
+/* ================= PRICING STYLES ================= */
+.pricing-section .section-title { margin-bottom: 0.25rem; }
+.pricing-section .lead { color: #4b5563; margin-bottom: 1.25rem; }
+.pricing-grid { gap: 1.5rem; display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; }
+.pricing-section .pricing-inner { max-width: 1400px; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+.pricing-grid > .col-md-4 { display: flex; flex: 0 1 340px; max-width: 360px; }
+.pricing-card {
+  background: #fff; border-radius: 10px; padding: 1.6rem; box-shadow: 0 8px 20px rgba(12,40,80,0.04);
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 170px;
+  margin-bottom: 1.25rem; /* extra breathing room below each card */
+}
+.pricing-card h4 { margin-top: 0; margin-bottom: 0.5rem; }
+.pricing-card .pricing-list { margin: 0 0 0.5rem 1rem; color: #334155; }
+.pricing-card .pricing-list li { white-space: normal; }
+.pricing-card .price-amount, .pricing-card .price-total { margin-top: 0.6rem; font-weight: 800; font-size: 1.05rem; }
+.pricing-card .muted { color: #6b7280; font-size: 0.95rem; }
+.pricing-card.highlight { border: 1px solid rgba(13,110,253,0.08); box-shadow: 0 12px 30px rgba(13,110,253,0.06); }
+.pricing-card:hover { transform: translateY(-6px); box-shadow: 0 18px 44px rgba(12,40,80,0.12); }
+
+.comparison-section { margin-top: 2rem; }
+.comparison-card { padding: 1rem; border-radius: 8px; background: #f8fafc; box-shadow: 0 6px 18px rgba(12,40,80,0.03); }
+.comparison-card.preferred { background: linear-gradient(90deg, rgba(13,110,253,0.06), rgba(99,102,241,0.02)); border: 1px solid rgba(13,110,253,0.08); }
+
+.commitment-banner { display: inline-block; padding: 0.6rem 1rem; background: #0d6efd; color: white; border-radius: 999px; font-weight: 600; }
+
+@media (max-width: 1400px) {
+  .pricing-section .pricing-inner { max-width: 1200px; }
+}
+
+@media (max-width: 1200px) {
+  .pricing-section .pricing-inner { max-width: 920px; }
+}
+
+@media (max-width: 992px) {
+  /* keep three columns on larger devices; mobile handled separately */
+}
+
+@media (max-width: 576px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-card { padding: 0.9rem;}
+  .pricing-section .pricing-inner { max-width: 100%; padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* Ensure on small devices (mobile) cards stack one-by-one,
+   while on tablets/desktops all three cards sit in a single row. */
+@media (max-width: 576px) {
+  .pricing-grid { grid-template-columns: 1fr !important; }
+}
+
+/* Slightly larger title for clarity */
+.pricing-section .section-title { font-size: 1.6rem; }
+
+/* ================= SAFETY: prevent text overflow and ensure alignment ================= */
+/* Apply sensible box model and wrapping to common card/content blocks */
+.pricing-card,
+.destination-card,
+.destination-info,
+.about-section,
+.service-box {
+  box-sizing: border-box;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Ensure paragraph and list spacing doesn't push outside */
+.pricing-card p,
+.destination-info p,
+.about-section p,
+.service-box p {
+  margin: 0 0 0.6rem 0;
+}
+
+/* Make lists inside cards respect container width */
+.pricing-card ul,
+.destination-info ul,
+.about-section ul {
+  margin: 0 0 0 1rem;
+  padding: 0;
+}
+
+/* If any content still overflows, clip visually rather than breaking layout */
+.pricing-card, .destination-card { min-height: 0; }
+
+
+
+
